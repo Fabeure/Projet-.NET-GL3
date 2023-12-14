@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,10 +20,15 @@
 </head>
 <body class="e-bigger">
 
+    
+@if (SignInManager.IsSignedIn(User))
+{
     <partial name="_SideBar" />
-
+}
     <div class="dock-target">
 
+@if (SignInManager.IsSignedIn(User))
+{
         <nav class="navbar sticky-top">
             <div class="container-fluid py-2 px-4">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -29,8 +39,7 @@
                 </div>
             </div>
         </nav>
-
-
+}
         <div class="main-content">
             <div class="container mt-5">
                 <div class="row justify-content-center">

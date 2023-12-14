@@ -21,6 +21,11 @@ namespace Expense_Tracker.Controllers
         // GET: Transaction
         public async Task<IActionResult> Index()
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             var applicationDbContext = _context.Transactions.Include(t => t.Category);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -28,6 +33,11 @@ namespace Expense_Tracker.Controllers
         // GET: Transaction/AddOrEdit
         public IActionResult AddOrEdit(int id = 0)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             PopulateCategories();
             if (id == 0)
                 return View(new Transaction());
@@ -42,6 +52,11 @@ namespace Expense_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit([Bind("TransactionId,CategoryId,Amount,Note,Date")] Transaction transaction)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             if (ModelState.IsValid)
             {
                 if (transaction.TransactionId == 0)
@@ -60,6 +75,11 @@ namespace Expense_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             if (_context.Transactions == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Transactions'  is null.");
@@ -78,6 +98,7 @@ namespace Expense_Tracker.Controllers
         [NonAction]
         public void PopulateCategories()
         {
+
             var CategoryCollection = _context.Categories.ToList();
             Category DefaultCategory = new Category() { CategoryId = 0, Title = "Choose a Category" };
             CategoryCollection.Insert(0, DefaultCategory);
