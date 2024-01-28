@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Expense_Tracker.Models;
 
 namespace Expense_Tracker.Areas.Identity.Data;
 
-public class IdentityDataContext : IdentityDbContext<IdentityUser>
+public class IdentityDataContext : IdentityDbContext<ApplicationUser>
 {
     public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
         : base(options)

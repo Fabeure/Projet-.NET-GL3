@@ -29,4 +29,8 @@
     <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="20.1.0.58" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\IdentityData\" />
+  </ItemGroup>
+
 </Project>

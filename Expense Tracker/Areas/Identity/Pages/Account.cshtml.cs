@@ -2,6 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Expense_Tracker.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,9 +19,9 @@ namespace Expense_Tracker.Areas.Identity.Pages.Account
     /// </summary>
    public class AccountModel : PageModel
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public AccountModel(UserManager<IdentityUser> userManager)
+    public AccountModel(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
     }
@@ -31,13 +34,22 @@ namespace Expense_Tracker.Areas.Identity.Pages.Account
         [Required]
         [Display(Name = "New Username")]
         public string NewUsername { get; set; }
-    }
+
+        [Display(Name = "Profile Picture")]
+        public byte[] ProfilePicture { get; set; }
+        }
 
     public async Task<IActionResult> OnGet()
     {
         var user = await _userManager.GetUserAsync(User);
 
-        if (user == null)
+            Input = new InputModel
+            {
+
+                ProfilePicture = user.profilePicture
+            };
+
+            if (user == null)
         {
             return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
         }
@@ -64,7 +76,20 @@ namespace Expense_Tracker.Areas.Identity.Pages.Account
 
         // Update the username
         user.UserName = Input.NewUsername;
-        var result = await _userManager.UpdateAsync(user);
+            if (Request.Form.Files.Count > 0)
+            {
+                var file = Request.Form.Files.FirstOrDefault();
+
+                //check file size and extension
+
+                using (var dataStream = new MemoryStream())
+                {
+                    await file.CopyToAsync(dataStream);
+                    user.profilePicture = dataStream.ToArray();
+                }
+
+            }
+            var result = await _userManager.UpdateAsync(user);
 
         if (!result.Succeeded)
         {
