@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Expense_Tracker.Models;
 
 namespace Expense_Tracker.Controllers
@@ -21,6 +22,11 @@ namespace Expense_Tracker.Controllers
         // GET: Category
         public async Task<IActionResult> Index()
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             return _context.Categories != null ?
                         View(await _context.Categories.ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
@@ -30,6 +36,11 @@ namespace Expense_Tracker.Controllers
         // GET: Category/AddOrEdit
         public IActionResult AddOrEdit(int id = 0)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             if (id == 0)
                 return View(new Category());
             else
@@ -44,6 +55,11 @@ namespace Expense_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit([Bind("CategoryId,Title,Icon,Type")] Category category)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             if (ModelState.IsValid)
             {
                 if (category.CategoryId == 0)
@@ -62,6 +78,11 @@ namespace Expense_Tracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
+
+            if (!isLoggedIn){
+                return RedirectToPage("/Account/Login", new { area = "Identity" });
+            }
             if (_context.Categories == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Categories'  is null.");

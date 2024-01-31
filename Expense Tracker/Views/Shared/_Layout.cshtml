@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using Expense_Tracker.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    var current_user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,26 +33,41 @@
 </head>
 <body class="e-bigger  ">
 
+    
+@if (SignInManager.IsSignedIn(User))
+{
     <partial name="_SideBar" />
-
+}
     <div class="dock-target">
 
+@if (SignInManager.IsSignedIn(User))
+{
         <nav class="navbar sticky-top">
             <div class="container-fluid py-2 px-4">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
                     <i class="fa-solid fa-bell"></i>
                     <i class="fa-solid fa-message"></i>
+<<<<<<< HEAD
                     <img class="profile-pic" src="~/profile.jpg" />
                     <button class="theme-toggle-btn" id="theme-switcher">
                         <span class="sun-icon">&#9728;</span>
                         <span class="moon-icon">&#9790;</span>
                     </button>
+=======
+                        @if (User != null && current_user != null)
+                        {
+                            <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
+                        }
+                        else
+                        {
+                            <img class="profile-pic" src="~/profile.jpg" />
+                        }
+>>>>>>> Saber
                 </div>
             </div>
         </nav>
-
-
+}
         <div class="main-content">
             <div class="container mt-5">
                 <div class="row justify-content-center">

@@ -1,9 +1,18 @@
-﻿@*
+﻿@using Expense_Tracker.Models
+@using Expense_Tracker.Customs
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims;
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     List<Object> menuItems = new List<Object>();
-
+    var current_user = await UserManager.GetUserAsync(User);
     menuItems.Add(new
     {
         text = "General",
@@ -46,7 +55,8 @@
     });
 }
 
-
+@if (SignInManager.IsSignedIn(User))
+{
 <ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px"
             target=".dock-target" enableGestures="false">
     <e-content-template>
@@ -60,10 +70,19 @@
         </div>
 
         <div class="profile-wrapper">
-            <img class="profile-pic" src="~/profile.jpg" />
+            <a href="/Identity/Account">
+                    @if (User != null && current_user != null) 
+                    {
+                        <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
+                    }
+                    else
+                    {
+                        <img class="profile-pic" src="~/profile.jpg" />
+                    }
+               </a>
             <div class="titles d-flex flex-column ps-3">
                 <h6 class="mb-0">Wallet App</h6>
-                <span class="text-muted">Ashton Cox</span>
+                <span class="text-muted">@User.Identity?.Name</span>
             </div>
         </div>
 
@@ -83,3 +102,5 @@
     });
 
 </script>
+
+}
