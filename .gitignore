@@ -19,3 +19,5 @@
 /Expense Tracker/obj/Expense Tracker.csproj.nuget.g.props
 /Expense Tracker/obj/project.assets.json
 /Expense Tracker/obj/project.nuget.cache
+/Expense Tracker/bin/Debug/net7.0/appsettings.json
+/.vs/Expense Tracker/v17/.suo

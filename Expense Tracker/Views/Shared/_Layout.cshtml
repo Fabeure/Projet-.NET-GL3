@@ -48,13 +48,6 @@
                 <div>
                     <i class="fa-solid fa-bell"></i>
                     <i class="fa-solid fa-message"></i>
-<<<<<<< HEAD
-                    <img class="profile-pic" src="~/profile.jpg" />
-                    <button class="theme-toggle-btn" id="theme-switcher">
-                        <span class="sun-icon">&#9728;</span>
-                        <span class="moon-icon">&#9790;</span>
-                    </button>
-=======
                         @if (User != null && current_user != null)
                         {
                             <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
@@ -63,7 +56,10 @@
                         {
                             <img class="profile-pic" src="~/profile.jpg" />
                         }
->>>>>>> Saber
+                    <button class="theme-toggle-btn" id="theme-switcher">
+                        <span class="sun-icon">&#9728;</span>
+                        <span class="moon-icon">&#9790;</span>
+                    </button>
                 </div>
             </div>
         </nav>
