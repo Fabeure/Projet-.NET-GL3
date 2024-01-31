@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.testlog
+*.manifest
+/.vs/slnx.sqlite
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.AssemblyInfo.cs
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.assets.cache
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.csproj.AssemblyReference.cache
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.RazorAssemblyInfo.cache
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.GeneratedMSBuildEditorConfig.editorconfig
+/Expense Tracker/obj/Debug/net6.0/project.razor.vs.bin
+/Expense Tracker/obj/Debug/net6.0/Expense Tracker.AssemblyInfoInputs.cache
+*.cache
+*.editorconfig
+*.cs
+/Expense Tracker/obj/Expense Tracker.csproj.nuget.dgspec.json
+/Expense Tracker/obj/Expense Tracker.csproj.nuget.g.props
+/Expense Tracker/obj/project.assets.json
+/Expense Tracker/obj/project.nuget.cache
