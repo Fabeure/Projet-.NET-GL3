@@ -59,6 +59,7 @@ body.dark-theme {
 .e-grid.dark-theme {
     border: 0;
     border-radius: 5px;
+    
 }
 
     .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme{
@@ -70,12 +71,20 @@ body.dark-theme {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         padding: 10px;
-        background-color: #222b33;
+        background-color: #212529;
+        border-bottom-color: #444c54;
+        border-top-color: #444c54;
+        color: #fff;
+    }
+    .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme {
+        background-color: #212529;
+        color: white;
     }
 
-        .e-grid.dark-theme .e-gridheader.dark-theme .e-headercell.dark-theme {
-            background-color: #222b33;
-        }
+
+.e-grid.dark-theme .e-gridheader.dark-theme .e-headercell.dark-theme {
+    background-color: #222b33;
+}
 
     .e-grid.dark-theme .e-gridpager.dark-theme {
         background-color: #1a222b;
@@ -89,7 +98,10 @@ body.dark-theme {
     .e-grid.dark-theme .e-content table {
         padding: 0px 10px;
     }
-
+    .e-grid.dark-theme .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+     color: white;
+     }
+         
 .e-pagercontainer.dark-theme .e-icons.dark-theme {
     background-color: #1a222b;
     border: none !important;
@@ -199,11 +211,11 @@ nav.navbar.dark-theme {
         cursor: pointer;
     }
 
-        nav.navbar i:hover, nav.navbar img:hover {
+        /*nav.navbar i:hover, nav.navbar img:hover {
             cursor: pointer;
             background-color: #48545f14;
             transform: scale(1.05) translateZ(0px);
-        }
+        }*/
 
 nav.navbar {
     margin-left: 290px;
@@ -259,6 +271,7 @@ img.profile-pic {
     border-right: 1px dashed rgba(75,82,85,0.24);
     padding: 10px 20px;
     overflow: hidden;
+    color:white;
 }
 
     #sidebar .e-menu-wrapper.dark-theme {
@@ -319,6 +332,54 @@ img.profile-pic {
     content: '\f101'
 }
 
+.mycustomwidget {
+    background-color: #212b36;
+    color: black;
+    border-radius: 1rem;
+}
+/* Surcharge des styles Bootstrap pour les éléments e-input-group */
+.e-input-group.dark-theme,
+.e-input-group.e-control-wrapper.dark-theme,
+.e-float-input.dark-theme,
+.e-float-input.e-input-group.dark-theme,
+.e-float-input.e-control-wrapper.dark-theme,
+.e-float-input.e-input-group.e-control-wrapper.dark-theme {
+    background-color: #212529;
+    color: white;
+}
+
+  .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
+  .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
+        border-color: #212529;
+    }
+
+    /* Changer la couleur des textes dans le formulaire */
+    .e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text,
+    .e-float-input .e-control-wrapper:not(.e-error) input label.e-float-text.e-label-top.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme {
+        color: white;
+    }
+
+.e-input-group .e-input[readonly].dark-theme, .e-input-group.e-control-wrapper .e-input[readonly].dark-theme, .e-float-input input[readonly].dark-theme, .e-float-input.e-control-wrapper input[readonly].dark-theme, .e-float-input textarea[readonly].dark-theme, .e-float-input.e-control-wrapper textarea[readonly].dark-theme {
+    color: #e9ecef;
+}
+
 /*Widget*/
 body.dark-theme .widget {
     border-radius: 1rem;
@@ -365,10 +426,36 @@ body.dark-theme .widget {
     opacity: 1; /* Affichage par défaut pour les deux icônes */
 }
 
+.enableSmartLabels.dark-theme {
+    background-color: #1a222b;
+}
+
+.e-breadcrumb .e-breadcrumb-item[data-active-item] .e-breadcrumb-text.dark-theme {
+    color: white;
+    font-weight: 400;
+}
+.e-pager.dark-theme {
+    background-color: #212529;
+    border-color: #444c54;
+    color: #ced4da;
+    opacity: 1;
+}
+.e-pager div.e-icons.e-disable.dark-theme {
+    color: #adb5bd;
+}
+.e-breadcrumb .e-breadcrumb-item .e-breadcrumb-icon.dark-theme {
+    color: #adb5bd;
+}
+.text-muted.dark-theme {
+    --bs-text-opacity: 1;
+    color: white !important;
+}
+
 
 
 .moon-icon.dark-theme {
     opacity: 1; /* Cela cible le <body> avec la classe 'moon-icon', ce qui est incorrect */
+    color: white;
 }
 .sun-icon.dark-theme {
     opacity: 0; /* Cela cible le <body> avec la classe 'moon-icon', ce qui est incorrect */

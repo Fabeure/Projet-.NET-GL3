@@ -22,6 +22,7 @@ function toggleTheme() {
     const isDarkTheme = document.body.classList.contains('dark-theme');
     const allElements = document.querySelectorAll('*'); // Sélectionnez tous les éléments du site
 
+
     if (isDarkTheme) {
         // Si c'est en mode sombre, basculer vers le mode clair pour chaque élément
         allElements.forEach(element => {

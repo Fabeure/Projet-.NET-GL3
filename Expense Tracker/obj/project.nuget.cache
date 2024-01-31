@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nu6vlPNmBUXnQTxhgZpBtrtDx+RjSL96DU2KENPkgh5LUDvaG4Vf5KIztub75A964qBkSJPqHz1EBe/o0E9d7Q==",
+  "dgSpecHash": "nEcWYUvyXAZdZRHELEZR3uWEupA4uibL5DVdAQ961ud+nBLmWpK7H2pMfqHdEo9+kDS1Ku0e7ilwy+ICa3OW+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
+  "projectFilePath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\Expense Tracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\belha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\belha\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {}
+    "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\Expense Tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {
+    "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\Expense Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
+        "projectUniqueName": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\Expense Tracker.csproj",
         "projectName": "Expense Tracker",
-        "projectPath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
+        "projectPath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\Expense Tracker.csproj",
         "packagesPath": "C:\\Users\\belha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3\\Expense Tracker\\obj\\",
+        "outputPath": "C:\\Users\\belha\\source\\repos\\Projetdotnet\\Projet-.NET-GL3 - Copie\\Expense Tracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belha\\AppData\\Roaming\\NuGet\\NuGet.Config",
