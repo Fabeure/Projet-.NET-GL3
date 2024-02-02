@@ -1,0 +1,463 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: "Inter";
+}
+
+*:not(.fa-solid):not(.fa):not(.e-icons) {
+    font-family: "Inter"
+}
+
+body.dark-theme {
+    margin-bottom: 60px;
+    background-color: #12161d;
+    
+    color: #fff;
+    overflow: hidden;
+}
+
+.e-bigger.dark-theme {
+    font-size: x-large;
+}
+
+.main-content {
+    margin-left: 290px;
+    overflow-y: auto;
+    height: 92vh;
+}
+
+
+/*BreadCrumb*/
+.e-breadcrumb.dark-theme a, .e-breadcrumb.dark-theme a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/*Button*/
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+/*Hyperlink*/
+.no-a-decoration.dark-theme, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Grid*/
+.e-grid.dark-theme {
+    border: 0;
+    border-radius: 5px;
+    
+}
+
+    .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme{
+        background-color: #1a222b;
+    }
+
+    .e-grid.dark-theme .e-gridheader.dark-theme {
+        border: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 10px;
+        background-color: #212529;
+        border-bottom-color: #444c54;
+        border-top-color: #444c54;
+        color: #fff;
+    }
+    .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme {
+        background-color: #212529;
+        color: white;
+    }
+
+
+.e-grid.dark-theme .e-gridheader.dark-theme .e-headercell.dark-theme {
+    background-color: #222b33;
+}
+
+    .e-grid.dark-theme .e-gridpager.dark-theme {
+        background-color: #1a222b;
+    }
+
+    .e-grid.dark-theme .e-pagercontainer.dark-theme{
+        border: none;
+        background-color: #1a222b;
+    }
+
+    .e-grid.dark-theme .e-content table {
+        padding: 0px 10px;
+    }
+    .e-grid.dark-theme .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+     color: white;
+     }
+         
+.e-pagercontainer.dark-theme .e-icons.dark-theme {
+    background-color: #1a222b;
+    border: none !important;
+}
+
+.e-pager.dark-theme .e-numericitem.dark-theme {
+    color: #adb5bd;
+    background-color: #1a222b;
+    padding: 15px !important;
+}
+
+    .e-pager.dark-theme  .e-numericitem.dark-theme:not(.e-currentitem) {
+        border: none !important;
+    }
+
+    .e-pager.dark-theme .e-numericitem:hover {
+        color: #fff;
+    }
+
+    .e-pager.dark-theme .e-numericitem.dark-theme .e-currentitem.dark-theme {
+        color: #fff;
+        border: none !important;
+        background-color: #31373d;
+    }
+
+.e-pager.dark-theme div.e-icons:not(.e-disable) {
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.e-grid.dark-theme .e-pager.dark-theme {
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*Logo*/
+.logo-wrapper {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.app-logo {
+    padding: 10px 10px;
+}
+
+/*Menu*/
+#menu.dark-theme {
+    width: 100% !important;
+    background-color: inherit;
+    overflow: hidden;
+}
+
+    #menu .e-menu-item.dark-theme :not(.e-separator) {
+        height: 50px;
+        border-radius: 4px;
+    }
+
+    #menu .e-menu-item.dark-theme {
+        box-sizing: border-box;
+    }
+
+        #menu.dark-theme .e-menu-item.dark-theme a {
+            width: 100%;
+            color: white;
+            font-weight: 300;
+            padding: 7px 5px;
+            box-sizing: border-box;
+        }
+
+    #menu .e-anchor-wrap {
+        display: inline-block;
+    }
+
+    #menu.dark-theme .e-menu-item.dark-theme .e-anchor-wrap span.e-menu-icon {
+        color: white;
+       
+    }
+
+    #menu.dark-theme .e-menu-item.e-separator.dark-theme {
+        border: none;
+        margin: 5px 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        color: #65da41;
+    }
+
+        #menu.dark-theme .e-menu-item.e-separator:not(:first-child) {
+            margin-top: 35px;
+        }
+
+
+
+/*Navbar*/
+nav.navbar.dark-theme {
+    background-color: rgba(18, 22, 29);
+}
+
+    nav.navbar.dark-theme i {
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+        /*nav.navbar i:hover, nav.navbar img:hover {
+            cursor: pointer;
+            background-color: #48545f14;
+            transform: scale(1.05) translateZ(0px);
+        }*/
+
+nav.navbar {
+    margin-left: 290px;
+}
+
+/*Profile Pic*/
+img.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(72, 84, 95, 0.12);
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+    .profile-wrapper .titles {
+        line-height: 1;
+    }
+
+/*Radio Button Group*/
+.e-btn-group.custom-rbt-group {
+    width: 100%;
+}
+
+    .e-btn-group.custom-rbt-group .e-btn {
+        width: 50%;
+    }
+
+.custom-rbt-group.dark-theme label.e-btn.dark-theme {
+    box-shadow: none !important;
+    border: 1px solid #fff;
+    background-color: rgb(34 43 51);
+    color: #fff;
+}
+
+.e-btn-group.dark-theme .custom-rbt-group.dark-theme input:checked + label.e-btn {
+    background-color: #fff;
+    color: #212b36;
+    border: 1px solid #fff;
+}
+
+/*SideBar*/
+#sidebar.dark-theme {
+    background-color: #12161d;
+    border-right: 1px dashed rgba(75,82,85,0.24);
+    padding: 10px 20px;
+    overflow: hidden;
+    color:white;
+}
+
+    #sidebar .e-menu-wrapper.dark-theme {
+        width: 100%;
+        background-color: inherit;
+    }
+
+#sidebar-toggler {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+    #sidebar-toggler:hover {
+        cursor: pointer;
+        background-color: #48545f14;
+        transform: scale(1.05) translateZ(0px);
+    }
+
+#sidebar.e-close {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    #sidebar.e-close .app-logo {
+        display: none;
+    }
+
+    #sidebar.e-close .e-anchor-wrap, #sidebar.e-close .e-menu-item.e-menu-caret-icon {
+        font-size: 0px;
+    }
+
+    #sidebar.e-close .profile-wrapper .titles {
+        display: none !important;
+    }
+
+
+    #sidebar.e-open .e-anchor-wrap,
+    #sidebar.e-close .e-menu-icon, #sidebar.e-open .e-menu-icon {
+        visibility: visible;
+    }
+
+#sidebar.e-open .profile-wrapper .titles, #sidebar.e-open .app-logo {
+    display: flex;
+}
+
+#sidebar.e-sidebar.e-right.e-close {
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+#sidebar.e-open #sidebar-toggler:before {
+    content: '\f100'
+}
+
+#sidebar.e-close #sidebar-toggler:before {
+    content: '\f101'
+}
+
+.mycustomwidget {
+    background-color: #212b36;
+    color: black;
+    border-radius: 1rem;
+}
+/* Surcharge des styles Bootstrap pour les éléments e-input-group */
+.e-input-group.dark-theme,
+.e-input-group.e-control-wrapper.dark-theme,
+.e-float-input.dark-theme,
+.e-float-input.e-input-group.dark-theme,
+.e-float-input.e-control-wrapper.dark-theme,
+.e-float-input.e-input-group.e-control-wrapper.dark-theme {
+    background-color: #212529;
+    color: white;
+}
+
+  .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
+  .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
+        border-color: #212529;
+    }
+
+    /* Changer la couleur des textes dans le formulaire */
+    .e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text,
+    .e-float-input .e-control-wrapper:not(.e-error) input label.e-float-text.e-label-top.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text.dark-theme {
+        color: white;
+    }
+
+.e-input-group .e-input[readonly].dark-theme, .e-input-group.e-control-wrapper .e-input[readonly].dark-theme, .e-float-input input[readonly].dark-theme, .e-float-input.e-control-wrapper input[readonly].dark-theme, .e-float-input textarea[readonly].dark-theme, .e-float-input.e-control-wrapper textarea[readonly].dark-theme {
+    color: #e9ecef;
+}
+
+/*Widget*/
+body.dark-theme .widget {
+    border-radius: 1rem;
+    background-color: #212b36;
+    color: white;
+}
+/*style="background-color:#212b36"*/
+.widget.summary.dark-theme > div:first-child {
+    background-color: #222b33;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+        .widget.summary.dark-theme > div:first-child i {
+            font-weight: bold;
+        }
+
+    .widget.income.dark-theme > div:first-child {
+        color: #65da41;
+    }
+
+    .widget.expense.dark-theme > div:first-child {
+        color: #ff4e48;
+    }
+
+    .widget.balance.dark-theme > div:first-child {
+        color: #2aa1ff;
+    }
+
+    .widget.chart.dark-theme {
+        padding: 5px;
+    }
+
+/* Styles pour l'icône de soleil et de lune */
+.sun-icon.dark-theme,
+.moon-icon.dark-theme {
+    font-size: 24px;
+    line-height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1; /* Affichage par défaut pour les deux icônes */
+}
+
+.enableSmartLabels.dark-theme {
+    background-color: #1a222b;
+}
+
+.e-breadcrumb .e-breadcrumb-item[data-active-item] .e-breadcrumb-text.dark-theme {
+    color: white;
+    font-weight: 400;
+}
+.e-pager.dark-theme {
+    background-color: #212529;
+    border-color: #444c54;
+    color: #ced4da;
+    opacity: 1;
+}
+.e-pager div.e-icons.e-disable.dark-theme {
+    color: #adb5bd;
+}
+.e-breadcrumb .e-breadcrumb-item .e-breadcrumb-icon.dark-theme {
+    color: #adb5bd;
+}
+.text-muted.dark-theme {
+    --bs-text-opacity: 1;
+    color: white !important;
+}
+
+
+
+.moon-icon.dark-theme {
+    opacity: 1; /* Cela cible le <body> avec la classe 'moon-icon', ce qui est incorrect */
+    color: white;
+}
+.sun-icon.dark-theme {
+    opacity: 0; /* Cela cible le <body> avec la classe 'moon-icon', ce qui est incorrect */
+}
+
