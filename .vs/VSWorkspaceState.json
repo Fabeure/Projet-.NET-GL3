@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Expense Tracker"
   ],
+  "SelectedNode": "\\Expense Tracker\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }

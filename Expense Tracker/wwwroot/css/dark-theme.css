@@ -99,7 +99,7 @@ body.dark-theme {
         padding: 0px 10px;
     }
     .e-grid.dark-theme .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-     color: white;
+     color: red;
      }
          
 .e-pagercontainer.dark-theme .e-icons.dark-theme {
@@ -427,7 +427,7 @@ body.dark-theme .widget {
 }
 
 .enableSmartLabels.dark-theme {
-    background-color: #1a222b;
+    border-radius: 20px;
 }
 
 .e-breadcrumb .e-breadcrumb-item[data-active-item] .e-breadcrumb-text.dark-theme {

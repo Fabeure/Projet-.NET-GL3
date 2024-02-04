@@ -374,7 +374,7 @@ img.profile-pic {
 }
 
 .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-    color: black;
+    color: red;
 }
 
 
@@ -435,6 +435,9 @@ body.dark-theme {
     height: 40px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
 }
 body {
     margin-bottom: 60px;
@@ -443,7 +446,7 @@ body {
     overflow: hidden;
 }
 .enableSmartLabels {
-    background-color: green;
+    border-radius : 20px;
 }
 /* Styles pour l'icône de soleil et de lune */
 .sun-icon,

@@ -48,7 +48,7 @@
                 <div>
                     <i class="fa-solid fa-bell"></i>
                     <i class="fa-solid fa-message"></i>
-                        @if (User != null && current_user != null)
+                        @if (User != null && current_user != null && current_user.profilePicture != null)
                         {
                             <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
                         }
@@ -87,8 +87,6 @@
                                                     }
                                                 </div>
                                             </div>
-                                            <ejs-breadcrumb id="breadcrumb"
-                                                        separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
                                         </div>
                                     </div>
                                 </div>

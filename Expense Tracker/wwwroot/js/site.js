@@ -8,7 +8,9 @@ const darkTheme = localStorage.getItem(themeName);
 if (darkTheme === null) {
     localStorage.setItem(themeName, 'inactive');
 } else if (darkTheme === 'active') {
-    toggleTheme();
+    setTimeout(function () {
+        toggleTheme();
+    }, 2);
 }
 
 // Écouteur d'événement pour le changement de thème

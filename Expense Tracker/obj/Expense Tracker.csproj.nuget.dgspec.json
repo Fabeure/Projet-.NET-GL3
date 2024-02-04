@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SaberAzzouzi\\Source\\Repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {}
+    "C:\\Users\\SaberAzzouzi\\source\\repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SaberAzzouzi\\Source\\Repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {
+    "C:\\Users\\SaberAzzouzi\\source\\repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SaberAzzouzi\\Source\\Repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
+        "projectUniqueName": "C:\\Users\\SaberAzzouzi\\source\\repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
         "projectName": "Expense Tracker",
-        "projectPath": "C:\\Users\\SaberAzzouzi\\Source\\Repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
+        "projectPath": "C:\\Users\\SaberAzzouzi\\source\\repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\Expense Tracker.csproj",
         "packagesPath": "C:\\Users\\SaberAzzouzi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\SaberAzzouzi\\Source\\Repos\\Fabeure\\Projet-.NET-GL3\\Expense Tracker\\obj\\",
         "projectStyle": "PackageReference",
