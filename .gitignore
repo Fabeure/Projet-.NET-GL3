@@ -21,3 +21,5 @@
 /Expense Tracker/obj/project.nuget.cache
 /Expense Tracker/bin/Debug/net7.0/appsettings.json
 /.vs/Expense Tracker/v17/.suo
+/.vs
+/Expense Tracker/bin/Debug/net7.0
