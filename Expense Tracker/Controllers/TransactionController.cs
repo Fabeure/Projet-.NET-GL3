@@ -54,7 +54,7 @@ namespace Expense_Tracker.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("TransactionId,CategoryId,Amount,Note,Date")] Transaction transaction)
+        public async Task<IActionResult> AddOrEdit([Bind("TransactionId,CategoryId,Amount,Note,Date,MissionId")] Transaction transaction)
         {
             bool isLoggedIn= (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
 
@@ -65,6 +65,11 @@ namespace Expense_Tracker.Controllers
             {
                 var currentUser = _userManager.GetUserAsync(User).Result;
                 transaction.ownerId = currentUser.Id;
+                var transactionMission = _context.Missions.Find(transaction.MissionId);
+                if (transactionMission != null)
+                {
+                    transaction.MissionId = transactionMission.MissionId;
+                }
                 _context.Add(transaction);
             }
             else

@@ -71,13 +71,13 @@ body.dark-theme {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         padding: 10px;
-        background-color: #212529;
+        background-color: #0a0e12;
         border-bottom-color: #444c54;
         border-top-color: #444c54;
         color: #fff;
     }
     .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme {
-        background-color: #212529;
+        background-color: #0a0e12;
         color: white;
     }
 
@@ -99,7 +99,7 @@ body.dark-theme {
         padding: 0px 10px;
     }
     .e-grid.dark-theme .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-     color: red;
+     color: lightsalmon;
      }
          
 .e-pagercontainer.dark-theme .e-icons.dark-theme {
@@ -344,13 +344,13 @@ img.profile-pic {
 .e-float-input.e-input-group.dark-theme,
 .e-float-input.e-control-wrapper.dark-theme,
 .e-float-input.e-input-group.e-control-wrapper.dark-theme {
-    background-color: #212529;
+    background-color: #0a0e12;
     color: white;
 }
 
   .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
   .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
-        border-color: #212529;
+        border-color: #0a0e12;
     }
 
     /* Changer la couleur des textes dans le formulaire */
@@ -435,7 +435,7 @@ body.dark-theme .widget {
     font-weight: 400;
 }
 .e-pager.dark-theme {
-    background-color: #212529;
+    background-color: #0a0e12;
     border-color: #444c54;
     color: #ced4da;
     opacity: 1;
