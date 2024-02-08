@@ -485,3 +485,9 @@ body {
  .moon-icon {
     opacity: 0; 
 }
+
+.uploaded-pic {
+    border-radius: 50%;
+    max-width: 100px; /* Adjust the size as needed */
+    max-height: 100px; /* Adjust the size as needed */
+}
