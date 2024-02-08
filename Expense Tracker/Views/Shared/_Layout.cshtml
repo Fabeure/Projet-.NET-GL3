@@ -20,6 +20,7 @@
     <link href="https://cdn.syncfusion.com/ej2/20.1.55/bootstrap5-dark.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -47,8 +48,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
                     <i class="fa-solid fa-bell"></i>
-                    <i class="fa-solid fa-message"></i>
-                        @if (User != null && current_user != null && current_user.profilePicture != null)
+                        <button class="logout-btn" onclick="location.href='/Identity/Account/logout'">
+                            <img src="~/shutdown.png" alt="Déconnexion" class="logout-icon">
+                        </button>
+                            @if (User != null && current_user != null && current_user.profilePicture != null)
                         {
                             <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
                         }

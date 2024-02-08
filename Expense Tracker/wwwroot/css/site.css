@@ -206,11 +206,7 @@ nav.navbar {
         cursor: pointer;
     }
 
-        nav.navbar i:hover, nav.navbar img:hover {
-            cursor: pointer;
-            background-color: #fdffcd;
-            transform: scale(1.05) translateZ(0px);
-        }
+       
 
 nav.navbar {
     margin-left: 290px;
@@ -439,6 +435,27 @@ body.dark-theme {
     justify-content: flex-end;
     float: right;
 }
+.logout-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    float: left;
+}
+.logout-icon {
+    width: 24px; /* Largeur souhaitée */
+    height: 24px; /* Hauteur souhaitée */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 body {
     margin-bottom: 60px;
     background-color: #fdffcd;
