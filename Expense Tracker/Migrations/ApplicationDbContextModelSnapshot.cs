@@ -151,6 +151,9 @@ namespace ExpenseTracker.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -163,20 +166,17 @@ namespace ExpenseTracker.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(75)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("ownerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TransactionId");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("MissionId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Transactions");
                 });
@@ -329,6 +329,10 @@ namespace ExpenseTracker.Migrations
 
             modelBuilder.Entity("Expense_Tracker.Models.Transaction", b =>
                 {
+                    b.HasOne("Expense_Tracker.Models.ApplicationUser", null)
+                        .WithMany("transactions")
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("Expense_Tracker.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
@@ -339,15 +343,9 @@ namespace ExpenseTracker.Migrations
                         .WithMany("Transactions")
                         .HasForeignKey("MissionId");
 
-                    b.HasOne("Expense_Tracker.Models.ApplicationUser", "User")
-                        .WithMany("transactions")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Category");
 
                     b.Navigation("Mission");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
