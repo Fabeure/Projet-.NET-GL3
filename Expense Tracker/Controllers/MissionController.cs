@@ -21,7 +21,7 @@ namespace Expense_Tracker.Controllers
             _userManager = manager;
         }
 
-        // GET: Transaction
+        // GET: Mission
         public async Task<IActionResult> Index()
         {
             bool isLoggedIn = (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
@@ -30,14 +30,9 @@ namespace Expense_Tracker.Controllers
             {
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
-            var applicationDbContext = _context.Missions;
-            var transactionCountPairs = new Dictionary<string, object>();
-            var missions = _context.Missions;
-            foreach ( var mission in missions)
-            {
-                transactionCountPairs[$"{mission.MissionId}"] = mission.Transactions.Count();
-            }
-            ViewBag.TransactionCountDict = transactionCountPairs;
+            var currentUser = _userManager.GetUserAsync(User).Result;
+            var applicationDbContext = _context.Missions.Where(m => m.Owner.Id == currentUser.Id);
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -49,11 +44,13 @@ namespace Expense_Tracker.Controllers
             {
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
-            var applicationDbContext = _context.Missions;
-            return View(await applicationDbContext.ToListAsync());
+            var currentMission = _context.Missions.Find(id);
+            var missionTransactions = _context.Transactions.Where(t => t.MissionId == currentMission.MissionId).ToList();
+            ViewBag.transactions = missionTransactions;
+            return View(currentMission);
         }
 
-        // GET: Transaction/AddOrEdit
+        // GET: Mission/AddOrEdit
         public IActionResult AddOrEdit(int id = 0)
         {
             bool isLoggedIn = (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
@@ -69,7 +66,7 @@ namespace Expense_Tracker.Controllers
                 return View(_context.Missions.Find(id));
         }
 
-        // POST: Transaction/AddOrEdit
+        // POST: Mission/AddOrEdit
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -98,7 +95,7 @@ namespace Expense_Tracker.Controllers
             return View(mission);
         }
 
-        // POST: Transaction/Delete/5
+        // POST: Mission/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

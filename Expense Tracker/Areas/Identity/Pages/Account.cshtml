@@ -7,45 +7,43 @@
 <h2>@ViewData["Title"]</h2>
 
 <div>
-    <dl>
-        <dt>Username:</dt>
-        <dd>@ViewData["Username"]</dd>
+    <dl class="row">
+        <dt class="col-sm-3">Username:</dt>
+        <dd class="col-sm-9">@ViewData["Username"]</dd>
 
-        <dt>Email:</dt>
-        <dd>@ViewData["Email"]</dd>
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-9">@ViewData["Email"]</dd>
         <!-- Add more properties as needed -->
     </dl>
 </div>
 
-<h3>Edit Username</h3>
+<h3 class="mt-4">Edit Username</h3>
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label asp-for="Input.NewUsername"></label>
+        <label asp-for="Input.ProfilePicture" class="d-block">Profile Picture</label>
+        @if (Model.Input.ProfilePicture != null)
+        {
+            <img id="profilePicture" alt="profile" class="uploaded-pic" src="data:image/*;base64,@(Convert.ToBase64String(Model.Input.ProfilePicture))" />
+        }
+        else
+        {
+            <img id="profilePicture" alt="test" class="uploaded-pic" src="~/profile.jpg" />
+        }
+        <div class="custom-file mt-2">
+            <input type="file"
+                   accept="image/*"
+                   asp-for="Input.ProfilePicture"
+                   class="custom-file-input"
+                   onchange="document.getElementById('profilePicture').src = window.URL.createObjectURL(this.files[0])" />
+            <span asp-validation-for="Input.ProfilePicture" class="text-danger"></span>
+        </div>
+    <div class="form-group">
+        <label asp-for="Input.NewUsername">New Username</label>
         <input asp-for="Input.NewUsername" class="form-control" />
         <span asp-validation-for="Input.NewUsername" class="text-danger"></span>
     </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label asp-for="Input.ProfilePicture" class="w-100"></label>
-            @if (Model.Input.ProfilePicture != null)
-            {
-                <img id="profilePicture" alt="profile" class="profile-picture" src="data:image/*;base64,@(Convert.ToBase64String(Model.Input.ProfilePicture))" />
-            }
-            else
-            {
-                <img id="profilePicture" alt="profile" class="profile-picture" src="~/images/avatar-male.jpg" />
-            }
-            <div class="custom-file mt-2">
-                <input type="file"
-                       accept="image/*"
-                       asp-for="Input.ProfilePicture"
-                       class="custom-file-input"
-                       onchange="document.getElementById('profilePicture').src = window.URL.createObjectURL(this.files[0])" />
-                <label class="custom-file-label" asp-for="Input.ProfilePicture">Choose picture...</label>
-                <span asp-validation-for="Input.ProfilePicture" class="text-danger"></span>
-            </div>
-        </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
