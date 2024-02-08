@@ -75,7 +75,6 @@ namespace ExpenseTracker.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<byte[]>("profilePicture")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
@@ -116,6 +115,31 @@ namespace ExpenseTracker.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Expense_Tracker.Models.Mission", b =>
+                {
+                    b.Property<int>("MissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MissionId"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("MissionId");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("Missions");
+                });
+
             modelBuilder.Entity("Expense_Tracker.Models.Transaction", b =>
                 {
                     b.Property<int>("TransactionId")
@@ -133,12 +157,26 @@ namespace ExpenseTracker.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("MissionId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(75)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ownerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TransactionId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("MissionId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Transactions");
                 });
@@ -280,6 +318,15 @@ namespace ExpenseTracker.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Expense_Tracker.Models.Mission", b =>
+                {
+                    b.HasOne("Expense_Tracker.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("Owner");
+                });
+
             modelBuilder.Entity("Expense_Tracker.Models.Transaction", b =>
                 {
                     b.HasOne("Expense_Tracker.Models.Category", "Category")
@@ -288,7 +335,19 @@ namespace ExpenseTracker.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Expense_Tracker.Models.Mission", "Mission")
+                        .WithMany("Transactions")
+                        .HasForeignKey("MissionId");
+
+                    b.HasOne("Expense_Tracker.Models.ApplicationUser", "User")
+                        .WithMany("transactions")
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Category");
+
+                    b.Navigation("Mission");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -340,6 +399,16 @@ namespace ExpenseTracker.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Expense_Tracker.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("transactions");
+                });
+
+            modelBuilder.Entity("Expense_Tracker.Models.Mission", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

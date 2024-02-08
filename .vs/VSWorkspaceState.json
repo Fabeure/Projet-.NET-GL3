@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Expense Tracker"
+    "\\Expense Tracker",
+    "\\Expense Tracker\\Views",
+    "\\Expense Tracker\\Views\\Mission",
+    "\\Expense Tracker\\Views\\Shared",
+    "\\Expense Tracker\\Views\\Transaction"
   ],
-  "SelectedNode": "\\Expense Tracker\\appsettings.json",
+  "SelectedNode": "\\Expense Tracker\\Views\\Transaction\\AddOrEdit.cshtml",
   "PreviewInSolutionExplorer": false
 }

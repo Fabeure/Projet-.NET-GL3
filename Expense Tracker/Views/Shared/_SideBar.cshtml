@@ -36,6 +36,12 @@
         iconCss = "fa-solid fa-arrow-right-arrow-left",
         url = "/Transaction"
     });
+        menuItems.Add(new
+    {
+        text = "Missions",
+        iconCss = "fa-solid fa-arrow-right-arrow-left",
+        url = "/Mission"
+    });
 
     menuItems.Add(new
     {
@@ -55,8 +61,7 @@
     });
 }
 
-@if (SignInManager.IsSignedIn(User))
-{
+@if (SignInManager.IsSignedIn(User)){
 <ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px"
             target=".dock-target" enableGestures="false">
     <e-content-template>
@@ -71,7 +76,7 @@
 
         <div class="profile-wrapper">
             <a href="/Identity/Account">
-                    @if (current_user.profilePicture != null) 
+                    @if (User != null && current_user != null && current_user.profilePicture != null) 
                     {
                         <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
                     }
@@ -82,7 +87,14 @@
                </a>
             <div class="titles d-flex flex-column ps-3">
                 <h6 class="mb-0">Wallet App</h6>
-                <span class="text-muted">@current_user.UserName</span>
+                    @if (User != null && current_user != null)
+                    {
+                        <span class="text-muted">@current_user.UserName</span>
+                    }
+                    else
+                    {
+                        <span class="text-muted">default name</span>
+                    }
             </div>
         </div>
 

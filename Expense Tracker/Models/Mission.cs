@@ -7,11 +7,11 @@ namespace Expense_Tracker.Models
         [Key]
         public int MissionId { get; set; }
 
-        public int UserId { get; set; }
-        public ApplicationUser Owner { get; set; }
-        public ICollection<Transaction> Transactions { get; set; }
-
+        public ApplicationUser? Owner { get; set; } = null;
+        public ICollection<Transaction>? Transactions { get; set; } = new List<Transaction>();
         public DateTime Date { get; set; } = DateTime.Now;
+
+        public string Name { get; set; }
 
     }
 }

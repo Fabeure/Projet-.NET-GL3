@@ -43,16 +43,16 @@ namespace Expense_Tracker.Areas.Identity.Pages.Account
     {
         var user = await _userManager.GetUserAsync(User);
 
+            if (user == null)
+            {
+                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
             Input = new InputModel
             {
 
                 ProfilePicture = user.profilePicture
             };
-
-            if (user == null)
-        {
-            return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-        }
 
         ViewData["Username"] = user.UserName;
         ViewData["Email"] = user.Email;

@@ -13,10 +13,12 @@ namespace Expense_Tracker.Controllers
     public class TransactionController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public TransactionController(ApplicationDbContext context)
+        public TransactionController(ApplicationDbContext context, UserManager<ApplicationUser> manager)
         {
             _context = context;
+            _userManager = manager;
         }
 
         // GET: Transaction
@@ -40,6 +42,7 @@ namespace Expense_Tracker.Controllers
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
             PopulateCategories();
+            PopulateMissions();
             if (id == 0)
                 return View(new Transaction());
             else
@@ -58,17 +61,17 @@ namespace Expense_Tracker.Controllers
             if (!isLoggedIn){
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
-            if (ModelState.IsValid)
+            if (transaction.TransactionId == 0)
             {
-                if (transaction.TransactionId == 0)
-                    _context.Add(transaction);
-                else
-                    _context.Update(transaction);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var currentUser = _userManager.GetUserAsync(User).Result;
+                transaction.ownerId = currentUser.Id;
+                transaction.User = currentUser;
+                _context.Add(transaction);
             }
-            PopulateCategories();
-            return View(transaction);
+            else
+                _context.Update(transaction);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Transaction/Delete/5
@@ -104,6 +107,13 @@ namespace Expense_Tracker.Controllers
             Category DefaultCategory = new Category() { CategoryId = 0, Title = "Choose a Category" };
             CategoryCollection.Insert(0, DefaultCategory);
             ViewBag.Categories = CategoryCollection;
+        }
+        public void PopulateMissions()
+        {
+            var MissionCollection = _context.Missions.ToList();
+            Mission DefaultMission = new Mission() { MissionId = 0, Name = "Choose a Mission" };
+            MissionCollection.Insert(0, DefaultMission);
+            ViewBag.Missions = MissionCollection;
         }
     }
 }
