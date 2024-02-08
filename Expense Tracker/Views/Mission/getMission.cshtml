@@ -12,18 +12,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Transaction #</th>
-                <th scope="col">Category</th>
+                <th scope="col">Transaction Note</th>
                 <th scope="col">Price</th>
             </tr>
         </thead>
         <tbody>
             <!-- Loop through transactions and populate the table rows -->
-            @foreach (var transaction in Model.Transactions)
+            @foreach (var transaction in ViewBag.transactions)
             {
                 <tr>
-                    <td>@transaction.TransactionId</td>
-                    <td>@transaction.Category</td>
+                    <td>@transaction.Note</td>
                     <td>@transaction.Amount</td>
                 </tr>
             }
