@@ -50,8 +50,7 @@ namespace Expense_Tracker.Controllers
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
             var applicationDbContext = _context.Missions;
-            var mission = _context.Missions.Find(id);
-            return View(mission);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Transaction/AddOrEdit

@@ -20,8 +20,6 @@ namespace Expense_Tracker.Models
         [ForeignKey("OwnerId")]
         public string ownerId { get; set; } = null;
 
-        public ApplicationUser? User { get; set; }
-
         [Range(1, int.MaxValue, ErrorMessage = "Amount should be greater than 0.")]
         public int Amount { get; set; }
 

@@ -10,10 +10,12 @@ namespace Expense_Tracker.Controllers
     {
 
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public DashboardController(ApplicationDbContext context)
+        public DashboardController(ApplicationDbContext context, UserManager<ApplicationUser> manager)
         {
             _context = context;
+            _userManager = manager;
         }
 
         public async Task<ActionResult> Index()
@@ -23,6 +25,7 @@ namespace Expense_Tracker.Controllers
             if (!isLoggedIn){
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
+            var currentUser = _userManager.GetUserAsync(User).Result;
 
             //Last 7 Days
             DateTime StartDate = DateTime.Today.AddDays(-6);
@@ -31,6 +34,7 @@ namespace Expense_Tracker.Controllers
             List<Transaction> SelectedTransactions = await _context.Transactions
                 .Include(x => x.Category)
                 .Where(y => y.Date >= StartDate && y.Date <= EndDate)
+                .Where(t => t.ownerId == currentUser.Id)
                 .ToListAsync();
 
             //Total Income

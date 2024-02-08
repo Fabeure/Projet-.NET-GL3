@@ -65,7 +65,6 @@ namespace Expense_Tracker.Controllers
             {
                 var currentUser = _userManager.GetUserAsync(User).Result;
                 transaction.ownerId = currentUser.Id;
-                transaction.User = currentUser;
                 _context.Add(transaction);
             }
             else
