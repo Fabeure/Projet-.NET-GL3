@@ -1,0 +1,73 @@
+﻿/* Style pour la section */
+section {
+    margin-top: 20px; 
+    margin-left: 140px;
+    margin-bottom: 1px;
+    position: absolute; 
+    top: 0; 
+}
+
+/* Style pour le formulaire */
+#account {
+    width: 400%; 
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Style pour les champs de formulaire */
+.form-floating {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    /* Style pour les labels des champs de formulaire */
+    .form-floating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem; 
+        font-family: Arial, sans-serif; 
+        color: #333; 
+        pointer-events: none;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: all 0.1s ease-in-out;
+    }
+
+/* Style pour les inputs des champs de formulaire */
+.form-control {
+    border-radius: 0.25rem;
+    font-size: 1rem; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Style pour le bouton */
+#login-submit {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif; 
+}
+
+/* Style pour les liens en bas du formulaire */
+p {
+    margin-bottom: 10px;
+}
+
+/* Style pour les liens en bas du formulaire avec classe "small" */
+.small {
+    font-size: 0.875rem; 
+}
+.register {
+    width: 400%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
