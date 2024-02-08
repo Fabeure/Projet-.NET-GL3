@@ -59,7 +59,7 @@ html {
 }
 
     .e-grid .e-gridcontent, .e-grid .e-table {
-        background-color: #2F3C7E ;
+        background-color: #fdffcd ;
         color: black ;
     }
 
@@ -77,20 +77,20 @@ html {
     border-top-right-radius: 5px;
     padding: 10px;
     color: black;
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
 }
 
         .e-grid .e-gridheader .e-headercell {
-            background-color: #2F3C7E;
+            background-color: #fdffcd;
         }
 
     .e-grid .e-gridpager {
-        background-color: #2F3C7E;
+        background-color: #fdffcd;
     }
 
     .e-grid .e-pagercontainer {
         border: none;
-        background-color: #2F3C7E;
+        background-color: #fdffcd;
     }
 
     .e-grid .e-content table {
@@ -98,13 +98,13 @@ html {
     }
 
 .e-pagercontainer .e-icons {
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     border: none !important;
 }
 
 .e-pager .e-numericitem {
     color: #adb5bd;
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     padding: 15px !important;
 }
 
@@ -119,7 +119,7 @@ html {
     .e-pager .e-numericitem.e-currentitem {
         color: black;
         border: none !important;
-        background-color: #2F3C7E;
+        background-color: #fdffcd;
     }
 
 .e-pager div.e-icons:not(.e-disable) {
@@ -196,7 +196,7 @@ html {
 
 /*Navbar*/
 nav.navbar {
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
 }
 
     nav.navbar i {
@@ -206,11 +206,7 @@ nav.navbar {
         cursor: pointer;
     }
 
-        nav.navbar i:hover, nav.navbar img:hover {
-            cursor: pointer;
-            background-color: #2F3C7E;
-            transform: scale(1.05) translateZ(0px);
-        }
+       
 
 nav.navbar {
     margin-left: 290px;
@@ -250,19 +246,19 @@ img.profile-pic {
 .custom-rbt-group label.e-btn {
     box-shadow: none !important;
     border: 1px solid #fff;
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     color: black;
 }
 
 .e-btn-group.custom-rbt-group input:checked + label.e-btn {
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     color: black;
     border: 1px solid #fff;
 }
 
 /*SideBar*/
 #sidebar {
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     border-right: 1px dashed rgba(75,82,85,0.24);
     padding: 10px 20px;
     overflow: hidden;
@@ -283,7 +279,7 @@ img.profile-pic {
 
     #sidebar-toggler:hover {
         cursor: pointer;
-        background-color: #2F3C7E;
+        background-color: #fdffcd;
         transform: scale(1.05) translateZ(0px);
     }
 
@@ -327,9 +323,9 @@ img.profile-pic {
     content: '\f101'
 }
 .mycustomwidget {
-    background-color: #FBEAEB;
+    background-color: #F5DCA3 ; 
     color: black;
-    border-radius: 1rem;
+    border-radius:1rem;
 }
 /* custom-styles.css */
 /* Surcharge des styles Bootstrap pour les éléments e-input-group */
@@ -339,7 +335,7 @@ img.profile-pic {
 .e-float-input.e-input-group,
 .e-float-input.e-control-wrapper,
 .e-float-input.e-input-group.e-control-wrapper {
-    background-color: #FBEAEB;
+    background-color: #F5DCA3;
     color: black;
 }
 .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
@@ -374,7 +370,7 @@ img.profile-pic {
 }
 
 .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-    color: lightsalmon;
+    color: red;
 }
 
 
@@ -382,12 +378,12 @@ img.profile-pic {
 /*Widget*/
 .widget.site {
     border-radius: 1rem;
-    background-color: #e6ccce !important;
+    background-color: #F7E3B3 !important;
     color: black;
 }
 
 .widget.summary > div:first-child {
-    background-color: #e6ccce;
+    background-color: #F7E3B3;
     padding: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -439,9 +435,30 @@ body.dark-theme {
     justify-content: flex-end;
     float: right;
 }
+.logout-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    float: left;
+}
+.logout-icon {
+    width: 24px; /* Largeur souhaitée */
+    height: 24px; /* Hauteur souhaitée */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 body {
     margin-bottom: 60px;
-    background-color: #2F3C7E;
+    background-color: #fdffcd;
     color: black;
     overflow: hidden;
 }
@@ -465,7 +482,7 @@ body {
     font-weight: 400;
 }
 .e-pager {
-    background-color: #0a0e12;
+    background-color: #212529;
     border-color: #444c54;
     color:black;
     opacity: 1;
@@ -484,10 +501,4 @@ body {
 
  .moon-icon {
     opacity: 0; 
-}
-
-.uploaded-pic {
-    border-radius: 50%;
-    max-width: 100px; /* Adjust the size as needed */
-    max-height: 100px; /* Adjust the size as needed */
 }
