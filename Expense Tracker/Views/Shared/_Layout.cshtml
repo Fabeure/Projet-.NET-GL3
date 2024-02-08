@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using Expense_Tracker.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    var current_user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,28 +20,50 @@
     <link href="https://cdn.syncfusion.com/ej2/20.1.55/bootstrap5-dark.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Expense_Tracker.styles.css" asp-append-version="true" />
+
+
+  
+<link rel="stylesheet" href="~/Expense_Tracker.styles.css" asp-append-version="true" />
+    <script src="/wwwroot/js/site.js"></script>
+
     <script src="https://cdn.syncfusion.com/ej2/20.1.55/dist/ej2.min.js"></script>
 </head>
-<body class="e-bigger">
+<body class="e-bigger  ">
 
+    
+@if (SignInManager.IsSignedIn(User))
+{
     <partial name="_SideBar" />
-
+}
     <div class="dock-target">
 
+@if (SignInManager.IsSignedIn(User))
+{
         <nav class="navbar sticky-top">
             <div class="container-fluid py-2 px-4">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
                     <i class="fa-solid fa-bell"></i>
                     <i class="fa-solid fa-message"></i>
-                    <img class="profile-pic" src="~/profile.jpg" />
+                        @if (User != null && current_user != null && current_user.profilePicture != null)
+                        {
+                            <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
+                        }
+                        else
+                        {
+                            <img class="profile-pic" src="~/profile.jpg" />
+                        }
+                    <button class="theme-toggle-btn" id="theme-switcher">
+                        <span class="sun-icon">&#9728;</span>
+                        <span class="moon-icon">&#9790;</span>
+                    </button>
                 </div>
             </div>
         </nav>
-
-
+}
         <div class="main-content">
             <div class="container mt-5">
                 <div class="row justify-content-center">
@@ -54,8 +87,6 @@
                                                     }
                                                 </div>
                                             </div>
-                                            <ejs-breadcrumb id="breadcrumb"
-                                                        separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
                                         </div>
                                     </div>
                                 </div>

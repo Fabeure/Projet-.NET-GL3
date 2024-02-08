@@ -7,8 +7,8 @@
 
 <div class="row">
     <div class="col-md-7">
-        <div class="widget p-5" style="background-color:#212b36">
-            <form asp-action="AddOrEdit">
+        <div class="widget p-5  mycustomwidget">
+                <form asp-action="AddOrEdit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
                 <div class="mb-3">
@@ -32,8 +32,8 @@
 
 
     </div>
-    <div class="col-md-5">
-        <div class="widget h-100 d-flex justify-content-center align-items-center">
+    <div class="col-md-5 ">
+        <div class="widget h-100 d-flex justify-content-center align-items-center  mycustomwidget">
             <i class="fa-solid fa-shapes fa-2xl"></i>
         </div>
     </div>

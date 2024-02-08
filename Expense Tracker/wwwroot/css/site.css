@@ -18,12 +18,7 @@ html {
     font-family: "Inter"
 }
 
-body {
-    margin-bottom: 60px;
-    background-color: #12161d;
-    color: #fff;
-    overflow: hidden;
-}
+
 
 .e-bigger {
     font-size: x-large;
@@ -58,31 +53,44 @@ body {
 .e-grid {
     border: 0;
     border-radius: 5px;
+    color : black ;
+
+
 }
 
     .e-grid .e-gridcontent, .e-grid .e-table {
-        background-color: #1a222b;
+        background-color: #fdffcd ;
+        color: black ;
     }
 
-    .e-grid .e-gridheader {
-        border: 5px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        padding: 10px;
-        background-color: #222b33;
+    .e-grid-columns.site{
+        color: black !important;
     }
+   .e-grid.site .e-row.site .e-cell.site {
+    color: black; /* Couleur du texte dans le mode light */
+}
+
+
+.e-grid .e-gridheader {
+    border: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    color: black;
+    background-color: #fdffcd;
+}
 
         .e-grid .e-gridheader .e-headercell {
-            background-color: #222b33;
+            background-color: #fdffcd;
         }
 
     .e-grid .e-gridpager {
-        background-color: #1a222b;
+        background-color: #fdffcd;
     }
 
     .e-grid .e-pagercontainer {
         border: none;
-        background-color: #1a222b;
+        background-color: #fdffcd;
     }
 
     .e-grid .e-content table {
@@ -90,13 +98,13 @@ body {
     }
 
 .e-pagercontainer .e-icons {
-    background-color: #1a222b;
+    background-color: #fdffcd;
     border: none !important;
 }
 
 .e-pager .e-numericitem {
     color: #adb5bd;
-    background-color: #1a222b;
+    background-color: #fdffcd;
     padding: 15px !important;
 }
 
@@ -105,17 +113,17 @@ body {
     }
 
     .e-pager .e-numericitem:hover {
-        color: #fff;
+        color: black;
     }
 
     .e-pager .e-numericitem.e-currentitem {
-        color: #fff;
+        color: black;
         border: none !important;
-        background-color: #31373d;
+        background-color: #fdffcd;
     }
 
 .e-pager div.e-icons:not(.e-disable) {
-    color: #fff;
+    color: black;
     cursor: pointer;
     font-weight: bold;
 }
@@ -125,6 +133,7 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 
 /*Logo*/
 .logo-wrapper {
@@ -156,7 +165,7 @@ body {
 
         #menu .e-menu-item a {
             width: 100%;
-            color: rgb(171, 163, 152);
+            color: black;
             font-weight: 300;
             padding: 7px 5px;
             box-sizing: border-box;
@@ -167,7 +176,7 @@ body {
     }
 
     #menu .e-menu-item .e-anchor-wrap span.e-menu-icon {
-        color: rgb(171, 163, 152);
+        color: black;
     }
 
     #menu .e-menu-item.e-separator {
@@ -187,7 +196,7 @@ body {
 
 /*Navbar*/
 nav.navbar {
-    background-color: rgba(18, 22, 29);
+    background-color: #fdffcd;
 }
 
     nav.navbar i {
@@ -199,7 +208,7 @@ nav.navbar {
 
         nav.navbar i:hover, nav.navbar img:hover {
             cursor: pointer;
-            background-color: #48545f14;
+            background-color: #fdffcd;
             transform: scale(1.05) translateZ(0px);
         }
 
@@ -241,22 +250,23 @@ img.profile-pic {
 .custom-rbt-group label.e-btn {
     box-shadow: none !important;
     border: 1px solid #fff;
-    background-color: rgb(34 43 51);
-    color: #fff;
+    background-color: #fdffcd;
+    color: black;
 }
 
 .e-btn-group.custom-rbt-group input:checked + label.e-btn {
-    background-color: #fff;
-    color: #212b36;
+    background-color: #fdffcd;
+    color: black;
     border: 1px solid #fff;
 }
 
 /*SideBar*/
 #sidebar {
-    background-color: #12161d;
+    background-color: #fdffcd;
     border-right: 1px dashed rgba(75,82,85,0.24);
     padding: 10px 20px;
-    overflow:hidden;
+    overflow: hidden;
+    color:black;
 }
 
     #sidebar .e-menu-wrapper {
@@ -273,7 +283,7 @@ img.profile-pic {
 
     #sidebar-toggler:hover {
         cursor: pointer;
-        background-color: #48545f14;
+        background-color: #fdffcd;
         transform: scale(1.05) translateZ(0px);
     }
 
@@ -316,20 +326,73 @@ img.profile-pic {
 #sidebar.e-close #sidebar-toggler:before {
     content: '\f101'
 }
-
-/*Widget*/
-.widget {
-    border-radius: 1rem;
-    background-color: #1a222b;
+.mycustomwidget {
+    background-color: #F5DCA3 ; 
+    color: black;
+    border-radius:1rem;
 }
-
-    .widget.summary > div:first-child {
-        background-color: #222b33;
-        padding: 1rem;
-        border-top-left-radius: 1rem;
-        border-bottom-left-radius: 1rem;
+/* custom-styles.css */
+/* Surcharge des styles Bootstrap pour les éléments e-input-group */
+.e-input-group,
+.e-input-group.e-control-wrapper,
+.e-float-input,
+.e-float-input.e-input-group,
+.e-float-input.e-control-wrapper,
+.e-float-input.e-input-group.e-control-wrapper {
+    background-color: #F5DCA3;
+    color: black;
+}
+.e-input-group:not(.e-success):not(.e-warning):not(.e-error),
+.e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
+        border-color: black;
     }
 
+    /* Changer la couleur des textes dans le formulaire */
+   modif.e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text,
+    .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text,
+    .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text,
+    .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text,
+    .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text,
+     .e-float-input .e-control-wrapper:not(.e-error) input label.e-float-text.e-label-top,
+      .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:focus ~ label.e-float-text,
+   .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input:valid ~ label.e-float-text,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input ~ label.e-label-top.e-float-text,
+     .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:focus ~ label.e-float-text,
+     .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text,
+   .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[readonly] ~ label.e-label-top.e-float-text,
+     .e-bigger .e-float-input.e-control-wrapper:not(.e-error) input[disabled] ~ label.e-label-top.e-float-text,
+    .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text,
+    .e-float-input.e-control-wrapper.e-bigger:not(.e-error).e-input-focus input ~ label.e-float-text,
+    .e-bigger .e-float-input.e-control-wrapper:not(.e-error).e-input-focus input ~ label.e-float-text {
+        color: black;
+    }
+   .e-input-group .e-input[readonly], .e-input-group.e-control-wrapper .e-input[readonly], .e-float-input input[readonly], .e-float-input.e-control-wrapper input[readonly], .e-float-input textarea[readonly], .e-float-input.e-control-wrapper textarea[readonly] {
+    color: black;
+}
+
+.e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: red;
+}
+
+
+
+/*Widget*/
+.widget.site {
+    border-radius: 1rem;
+    background-color: #F7E3B3 !important;
+    color: black;
+}
+
+.widget.summary > div:first-child {
+    background-color: #F7E3B3;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+    
         .widget.summary > div:first-child i {
             font-weight: bold;
         }
@@ -349,3 +412,76 @@ img.profile-pic {
     .widget.chart {
         padding: 5px;
     }
+
+    /*
+
+body.dark-theme {
+    background-color: #12161d;
+    color: white;
+}
+#sidebar.dark-theme {
+    background-color: #1a222b;
+    border-right: 1px dashed rgba(75,82,85,0.24);
+    padding: 10px 20px;
+    overflow: hidden;
+}
+*/
+/* Styles pour le bouton de changement de thème */
+.theme-toggle-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+}
+body {
+    margin-bottom: 60px;
+    background-color: #fdffcd;
+    color: black;
+    overflow: hidden;
+}
+.enableSmartLabels {
+    border-radius : 20px;
+}
+/* Styles pour l'icône de soleil et de lune */
+.sun-icon,
+.moon-icon {
+    font-size: 24px;
+    line-height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1; /* Affichage par défaut pour les deux icônes */
+    color:gold;
+}
+.e-breadcrumb .e-breadcrumb-item[data-active-item] .e-breadcrumb-text {
+    color: black;
+    font-weight: 400;
+}
+.e-pager {
+    background-color: #212529;
+    border-color: #444c54;
+    color:black;
+    opacity: 1;
+}
+.e-pager div.e-icons.e-disable {
+        color: black;
+    }
+.e-breadcrumb .e-breadcrumb-item .e-breadcrumb-icon {
+    color: black;
+}
+.text-muted {
+    --bs-text-opacity: 1;
+    color: black !important,;
+}
+
+
+ .moon-icon {
+    opacity: 0; 
+}
