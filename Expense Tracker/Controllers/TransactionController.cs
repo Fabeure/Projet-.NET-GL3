@@ -112,6 +112,7 @@ namespace Expense_Tracker.Controllers
             CategoryCollection.Insert(0, DefaultCategory);
             ViewBag.Categories = CategoryCollection;
         }
+        [NonAction]
         public void PopulateMissions()
         {
             var MissionCollection = _context.Missions.ToList();

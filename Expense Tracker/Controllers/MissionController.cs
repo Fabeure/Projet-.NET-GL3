@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Expense_Tracker.Models;
@@ -36,7 +31,7 @@ namespace Expense_Tracker.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        public async Task<IActionResult> getMission(int id)
+        public async Task<IActionResult> MissionDetails(int id)
         {
             bool isLoggedIn = (HttpContext.User != null) && HttpContext.User.Identity.IsAuthenticated;
 
@@ -44,9 +39,11 @@ namespace Expense_Tracker.Controllers
             {
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
-            var currentMission = _context.Missions.Find(id);
-            var missionTransactions = _context.Transactions.Where(t => t.MissionId == currentMission.MissionId).ToList();
+            Mission currentMission = _context.Missions.Find(id);
+
+            List<Transaction> missionTransactions = _context.Transactions.Where(t => t.MissionId == currentMission.MissionId).ToList();
             ViewBag.transactions = missionTransactions;
+
             return View(currentMission);
         }
 
@@ -110,7 +107,7 @@ namespace Expense_Tracker.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Transactions'  is null.");
             }
-            var mission = await _context.Missions.FindAsync(id);
+            Mission mission = await _context.Missions.FindAsync(id);
             if (mission != null)
             {
                 _context.Missions.Remove(mission);

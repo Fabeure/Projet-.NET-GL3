@@ -10,7 +10,7 @@ if (darkTheme === null) {
 } else if (darkTheme === 'active') {
     setTimeout(function () {
         toggleTheme();
-    }, 2);
+    }, 10);
 }
 
 // Écouteur d'événement pour le changement de thème

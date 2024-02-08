@@ -59,7 +59,7 @@ html {
 }
 
     .e-grid .e-gridcontent, .e-grid .e-table {
-        background-color: #fdffcd ;
+        background-color: #1995AD ;
         color: black ;
     }
 
@@ -77,20 +77,20 @@ html {
     border-top-right-radius: 5px;
     padding: 10px;
     color: black;
-    background-color: #fdffcd;
+    background-color: #1995AD;
 }
 
         .e-grid .e-gridheader .e-headercell {
-            background-color: #fdffcd;
+            background-color: #1995AD;
         }
 
     .e-grid .e-gridpager {
-        background-color: #fdffcd;
+        background-color: #1995AD;
     }
 
     .e-grid .e-pagercontainer {
         border: none;
-        background-color: #fdffcd;
+        background-color: #1995AD;
     }
 
     .e-grid .e-content table {
@@ -98,13 +98,13 @@ html {
     }
 
 .e-pagercontainer .e-icons {
-    background-color: #fdffcd;
+    background-color: #1995AD;
     border: none !important;
 }
 
 .e-pager .e-numericitem {
     color: #adb5bd;
-    background-color: #fdffcd;
+    background-color: #1995AD;
     padding: 15px !important;
 }
 
@@ -119,7 +119,7 @@ html {
     .e-pager .e-numericitem.e-currentitem {
         color: black;
         border: none !important;
-        background-color: #fdffcd;
+        background-color: #1995AD;
     }
 
 .e-pager div.e-icons:not(.e-disable) {
@@ -196,7 +196,7 @@ html {
 
 /*Navbar*/
 nav.navbar {
-    background-color: #fdffcd;
+    background-color: #1995AD;
 }
 
     nav.navbar i {
@@ -246,19 +246,19 @@ img.profile-pic {
 .custom-rbt-group label.e-btn {
     box-shadow: none !important;
     border: 1px solid #fff;
-    background-color: #fdffcd;
+    background-color: #1995AD;
     color: black;
 }
 
 .e-btn-group.custom-rbt-group input:checked + label.e-btn {
-    background-color: #fdffcd;
+    background-color: #1995AD;
     color: black;
     border: 1px solid #fff;
 }
 
 /*SideBar*/
 #sidebar {
-    background-color: #fdffcd;
+    background-color: #1995AD;
     border-right: 1px dashed rgba(75,82,85,0.24);
     padding: 10px 20px;
     overflow: hidden;
@@ -279,7 +279,7 @@ img.profile-pic {
 
     #sidebar-toggler:hover {
         cursor: pointer;
-        background-color: #fdffcd;
+        background-color: #1995AD;
         transform: scale(1.05) translateZ(0px);
     }
 
@@ -323,7 +323,7 @@ img.profile-pic {
     content: '\f101'
 }
 .mycustomwidget {
-    background-color: #F5DCA3 ; 
+    background-color: #A1D6E2;
     color: black;
     border-radius:1rem;
 }
@@ -370,7 +370,7 @@ img.profile-pic {
 }
 
 .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd), .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-    color: red;
+    color: #F1D3B2;
 }
 
 
@@ -378,12 +378,12 @@ img.profile-pic {
 /*Widget*/
 .widget.site {
     border-radius: 1rem;
-    background-color: #F7E3B3 !important;
+    background-color: #F1F1F2 !important;
     color: black;
 }
 
 .widget.summary > div:first-child {
-    background-color: #F7E3B3;
+    background-color: #F1F1F2;
     padding: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -458,7 +458,7 @@ body.dark-theme {
 
 body {
     margin-bottom: 60px;
-    background-color: #fdffcd;
+    background-color: #1995AD;
     color: black;
     overflow: hidden;
 }
@@ -482,7 +482,7 @@ body {
     font-weight: 400;
 }
 .e-pager {
-    background-color: #212529;
+    background-color: #763626;
     border-color: #444c54;
     color:black;
     opacity: 1;
@@ -502,3 +502,9 @@ body {
  .moon-icon {
     opacity: 0; 
 }
+
+ .uploaded-pic{
+     max-height: 200px;
+     max-width: 200px;
+     border-radius: 20px;
+ }

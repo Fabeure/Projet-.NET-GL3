@@ -71,13 +71,13 @@ body.dark-theme {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         padding: 10px;
-        background-color: #0a0e12;
+        background-color: #763626;
         border-bottom-color: #444c54;
         border-top-color: #444c54;
         color: #fff;
     }
     .e-grid.dark-theme .e-gridcontent.dark-theme, .e-grid.dark-theme .e-table.dark-theme {
-        background-color: #0a0e12;
+        background-color: #763626;
         color: white;
     }
 
@@ -344,13 +344,13 @@ img.profile-pic {
 .e-float-input.e-input-group.dark-theme,
 .e-float-input.e-control-wrapper.dark-theme,
 .e-float-input.e-input-group.e-control-wrapper.dark-theme {
-    background-color: #0a0e12;
+    background-color: #763626;
     color: white;
 }
 
   .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
   .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
-        border-color: #0a0e12;
+        border-color: #763626;
     }
 
     /* Changer la couleur des textes dans le formulaire */
@@ -435,7 +435,7 @@ body.dark-theme .widget {
     font-weight: 400;
 }
 .e-pager.dark-theme {
-    background-color: #0a0e12;
+    background-color: #763626;
     border-color: #444c54;
     color: #ced4da;
     opacity: 1;
