@@ -1,0 +1,193 @@
+﻿@using Expense_Tracker.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+@{
+    var current_user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*<link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/20.1.55/material.css" />*@
+    <link href="https://cdn.syncfusion.com/ej2/20.1.55/bootstrap5-dark.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+
+  
+<link rel="stylesheet" href="~/Expense_Tracker.styles.css" asp-append-version="true" />
+    <script src="/wwwroot/js/site.js"></script>
+
+    <script src="https://cdn.syncfusion.com/ej2/20.1.55/dist/ej2.min.js"></script>
+</head>
+<body class="e-bigger  ">
+
+    
+@if (SignInManager.IsSignedIn(User))
+{
+    <partial name="_SideBar" />
+}
+    <div class="dock-target">
+
+@if (SignInManager.IsSignedIn(User))
+{
+        <nav class="navbar sticky-top">
+            <div class="container-fluid py-2 px-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div>
+                        <i class="notification-icon-container">
+                            <i class="fa-solid fa-bell" id="notification-icon"></i>
+                            <span class="badge2" id="notification-badge">0</span>
+                            <div class="notification-dropdown" id="notification-dropdown">
+                                <!-- Notification items will be populated here -->
+                            </div>
+                        </i>
+                        <button class="logout-btn" onclick="location.href='/Identity/Account/logout'">
+                            <img src="~/shutdown.png" alt="Déconnexion" class="logout-icon">
+                        </button>
+                            @if (User != null && current_user != null && current_user.profilePicture != null)
+                        {
+                            <img class="profile-pic" src="data:image/*;base64,@(Convert.ToBase64String(current_user.profilePicture))" />
+                        }
+                        else
+                        {
+                            <img class="profile-pic" src="~/profile.jpg" />
+                        }
+                    <button class="theme-toggle-btn" id="theme-switcher">
+                        <span class="sun-icon">&#9728;</span>
+                        <span class="moon-icon">&#9790;</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+}
+        <div class="main-content">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="@(ViewData["isDashboard"] == null?"col-md-10":"col-md-12")">
+                        <main role="main" class="pb-3">
+                            @if (ViewData["isDashboard"] == null)
+                            {
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex flex-column mb-5">
+                                            <div class="d-flex mb-1">
+                                                <div class="flex-grow-1">
+                                                    <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                                </div>
+                                                <div>
+                                                    @if (ViewData["PageActionText"] != null)
+                                                    {
+                                                        <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                            @ViewData["PageActionText"]
+                                                        </a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <ejs-scripts></ejs-scripts>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // Function to fetch budget alerts
+            function fetchBudgetAlerts() {
+                $.ajax({
+                    url: '/Transaction/FetchBudgetAlerts',
+                    type: 'GET',
+                    success: function (data) {
+                        console.log(data);
+                        // Update notification count
+                        $('#notification-badge').text(data.length);
+
+                        // Update notification dropdown
+                        var dropdown = $('#notification-dropdown');
+                        dropdown.empty();
+                        data.forEach(function (alert) {
+                            var item = $('<div class="notification-item"></div>').text("You reached budgetlimit in " + alert.categoryTitle);
+                            dropdown.append(item);
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching budget alerts:', error);
+                    }
+                });
+            }
+
+            // Fetch budget alerts on page load
+            fetchBudgetAlerts();
+
+            // Refresh budget alerts every 5 minutes
+            setInterval(fetchBudgetAlerts, 300000); // 5 minutes in milliseconds
+        });
+        /*var notifications = [
+            "Notification 1",
+            "Notification 2",
+            "Notification 3"
+        ];
+
+        // Update badge count and show/hide notification dropdown
+        function updateNotificationBadge() {
+            var count = notifications.length; // Get number of notifications
+            $('#notification-badge').text(count); // Update badge count
+            if (count > 0) {
+                $('#notification-dropdown').show(); // Show dropdown if there are notifications
+            } else {
+                $('#notification-dropdown').hide(); // Hide dropdown if there are no notifications
+            }
+        }
+
+        // Populate notification dropdown with notification items
+        function populateNotificationDropdown() {
+            var dropdown = $('#notification-dropdown');
+            dropdown.empty(); // Clear existing notifications
+            notifications.forEach(function (notification) {
+                var item = $('<div class="notification-item"></div>').text(notification);
+                dropdown.append(item); // Append notification item to dropdown
+            });
+        }
+
+        // Update badge and dropdown on page load
+        $(document).ready(function () {
+            updateNotificationBadge();
+            populateNotificationDropdown();
+        });*/
+
+        // Hover functionality to show notification dropdown
+        $('#notification-icon').hover(function () {
+            $('#notification-dropdown').show();
+        }, function () {
+            $('#notification-dropdown').hide();
+        });
+    </script>
+</body>
+</html>

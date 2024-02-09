@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Mission>
+
+@{
+    ViewData["PageTitle"] = "Missions";
+    ViewData["PageActionText"] = "+ New Mission";
+    ViewData["PageActionUrl"] = "/Mission/AddOrEdit";
+}
+@{
+    var valueAccessor = "valueAccessorFn";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="missions" dataSource="@Model" gridLines="None"
+                  allowSorting="true" allowPaging="true" is-responsive="true" enable-responsive-row="true">
+            <e-grid-pagesettings pageSize="10"></e-grid-pagesettings>
+            <e-grid-columns>
+                <e-grid-column headerText="Name" field="Name" template="#nameColumnTemplate"></e-grid-column>
+                <e-grid-column headerText="Date" field="Date" width="110px"
+                    type="date" format="MMM-dd-yy" textAlign="Left"></e-grid-column>
+                <e-grid-column headerText="Expenses" field="MissionId" textAlign="Right" width="110px">
+                    <e-data-manager>aa</e-data-manager>
+                </e-grid-column>
+                <e-grid-column headerText="Actions" template="#actionColumnTemplate" width="100px"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-chart-simple fa-2xl"></i>
+        </div>
+    </div>
+</div>
+
+<script id="actionColumnTemplate" type="text/x-template">
+    <div class="d-flex flex-row justify-content-start">
+        <a class="btn btn-sm no-a-decoration" href="/Mission/AddOrEdit/${MissionId}">
+            <i class="fa-solid fa-pen fa-lg"></i>
+        </a>
+        <form action="/Mission/Delete/${MissionId}" method="post">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-sm btn-link no-a-decoration"
+            onclick="return confirm(&quot;Are sure to delete this record?&quot;)">
+                <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
+            </button>
+        </form>
+    </div>
+</script>
+<script>
+    function valueAccessorFn(field, data, column) {
+        //var value = ViewBag.TransactionCountDict[field]
+        return 1;
+    }
+</script>
+<script type="text/x-template" id="nameColumnTemplate">
+    <a href='@Url.Action("MissionDetails", "Mission")/${MissionId}' style='text-decoration: none;color: inherit;'>${Name}</a>
+</script>

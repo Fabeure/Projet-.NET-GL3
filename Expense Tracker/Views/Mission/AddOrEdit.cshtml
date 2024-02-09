@@ -1,0 +1,37 @@
+﻿@model Expense_Tracker.Models.Mission
+
+@{
+    ViewData["PageTitle"] = Model.MissionId == 0 ? "Create a new Mission" : "Edit Mission";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="widget p-5 mycustomwidget ">
+            <form asp-action="AddOrEdit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="MissionId" value="@Model.MissionId" />
+                <div class="mb-3">
+                    <ejs-datepicker id="date" ejs-for="Date"
+                                    placeholder="Date" floatLabelType="Always"
+                                    format="MMM-dd-yy"></ejs-datepicker>
+                </div>
+                <div class="mb-3">
+                    <ejs-textbox id="name" ejs-for="Name"
+                                    placeholder="Mission Name" floatLabelType="Always"></ejs-textbox>
+                </div>
+                <ejs-button id="submit" type="submit" content="Submit" cssClass="e-success"></ejs-button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center mycustomwidget">
+            <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}*@

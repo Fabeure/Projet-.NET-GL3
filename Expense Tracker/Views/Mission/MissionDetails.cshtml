@@ -1,0 +1,39 @@
+﻿@model Expense_Tracker.Models.Mission
+
+@{
+    ViewData["PageTitle"] = $"Mission # {Model.MissionId} : {Model.Name}";
+    ViewData["PageActionText"] = "+ New Transaction";
+    ViewData["PageActionUrl"] = "/Transaction/AddOrEdit";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Transaction List</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Transaction Note</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through transactions and populate the table rows -->
+            @foreach (var transaction in ViewBag.transactions)
+            {
+                <tr>
+                    <td>@transaction.Note</td>
+                    <td>@transaction.Amount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+@*@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}*@
