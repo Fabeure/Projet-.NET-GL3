@@ -1,41 +1,50 @@
-# Expense-Tracker-App-in-Asp.Net-Core-MVC
-This is an Expense Tracker App in Asp.Net Core MVC using SyncFusion Components.
+## MVC .NET Expense Tracker Project Documentation
 
-This is a complete Asp.Net Core application to demonstrate the building an enterprise application from scratch.
+A brief documentation about an expense tracking app
+**1. Purpose**
 
-Discussed Points :
-Implemented CRUD Operation of Category & Transaction
-Grid with Paging & Sorting
-Dashboard with Chart Elements
-Side Menu within Dockable Side Bar
-Etc.
+The purpose of this project is to create a web application that allows users to track their expenses. Users can add, edit, and delete transactions, categorize them, and view reports on their spending habits.
 
+**2. Technologies**
 
+* **Frontend:** ASP.NET MVC
+* **Backend:** C#
+* **Database:** (Specify the database used, e.g., Entity Framework Core with SQL Server)
+* **Authentication:** (Specify the authentication mechanism used, e.g., Identity Server)
 
- ## How it works ?
- 
- :tv: Video tutorial on this same topic
- Url : https://youtu.be/zQ5eijfpuu8
- 
- <a href="http://www.youtube.com/watch?feature=player_embedded&v=zQ5eijfpuu8
-" target="_blank"><img src="http://img.youtube.com/vi/zQ5eijfpuu8/0.jpg" 
-alt="Video demonstrating creation of an expense tracker application from scratch" width="500" height="400" border="10" /></a>
+**3. Features**
 
+* **Transaction Management:**
+    * Add, edit, and delete transactions
+    * Set date and amount for each transaction
+    * Assign categories to transactions
+* **Category Management:**
+    * Create, edit, and delete categories
+    * Track income and expense categories separately
+* **Reporting:**
+    * Generate reports on spending by category, timeframe, etc.
+    * Visualize data using charts or graphs
+* **Authentication:**
+    * Users can register and log in
+    * Secure access to user data
 
-| :bar_chart:               |  List of Tutorials   |   | :moneybag:           | Support Us                           |
-|--------------------------:|:---------------------|---|---------------------:|:-------------------------------------|
-| Angular                   |http://bit.ly/2KQN9xF |   |Paypal                | https://goo.gl/bPcyXW                |
-| Asp.Net Core              |http://bit.ly/30fPDMg |   |Amazon   Affiliate    | https://geni.us/JDzpE                |
-| React                     |http://bit.ly/325temF |   |
-| Python                    |http://bit.ly/2ws4utg |   | :point_right:        | Follow Us                            |
-| Node.js                   |https://goo.gl/viJcFs |   |Website               |http://www.codaffection.com          |
-| Asp.Net MVC               |https://goo.gl/gvjUJ7 |   |YouTube               |https://www.youtube.com/codaffection  |
-| Flutter                   |https://bit.ly/3ggmmJz|   |Facebook              |https://www.facebook.com/codaffection |
-| Web API                   |https://goo.gl/itVayJ |   |Twitter               |https://twitter.com/CodAffection      |
-| MEAN Stack                |https://goo.gl/YJPPAH |   |
-| C# Tutorial               |https://goo.gl/s1zJxo |   |
-| Asp.Net WebForm           |https://goo.gl/GXC2aJ |   |
-| C# WinForm                |https://goo.gl/vHS9Hd |   |
-| MS SQL                    |https://goo.gl/MLYS9e |   |
-| Crystal Report            |https://goo.gl/5Vou7t |   |
-| CG Exercises in C Program |https://goo.gl/qEWJCs |   |
+**4. Project Structure**
+
+* **Models:** Represent data entities like transactions, categories, and users.
+* **Controllers:** Handle user requests and interact with the model and views.
+* **Views:** Display information and provide interfaces for user interaction.
+* **Data Access Layer (DAL):** Handles interaction with the database.
+
+**5. Notes and Open Issues**
+
+* (Mention any specific points to note or unresolved issues in the project)
+
+**6. Next Steps**
+
+* (Outline any planned additions or improvements to the project)
+
+**7. Links and Resources**
+
+* (Provide links to relevant code repositories, documentation, or tutorials)
+
+I hope this helps!
